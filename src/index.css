@@ -1,0 +1,161 @@
+/* =========================================================
+   Root Variables
+   ========================================================= */
+:root {
+  /* Fonts & Colors */
+  --font-main: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --color-bg: #e0e0e0;         /* Light grey background */
+  --color-box: #f5f5f5;        /* Lighter grey for boxes */
+  --color-text: #222;
+  --color-accent: #646cff;
+  --color-accent-hover: #535bf2;
+
+  /* Layout & Style */
+  --border-radius: 10px;
+  --shadow-light: 0 2px 6px rgba(0, 0, 0, 0.1);
+  --shadow-soft: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================================================
+   Base Styles
+   ========================================================= */
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-family: var(--font-main);
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 40px 20px;
+}
+
+/* =========================================================
+   Headings
+   ========================================================= */
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-text);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* =========================================================
+   Form Section
+   ========================================================= */
+form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+  background-color: var(--color-box);
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-light);
+  margin-bottom: 2rem;
+}
+
+/* =========================================================
+   Input & Textarea Fields
+   ========================================================= */
+input,
+textarea {
+  width: 180px;
+  font-size: 1rem;
+  padding: 0.5em;
+  border: 1px solid #ccc;
+  border-radius: var(--border-radius);
+  background-color: #fff;
+  resize: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 4px rgba(100, 108, 255, 0.4);
+}
+
+/* =========================================================
+   Buttons
+   ========================================================= */
+button {
+  border: none;
+  border-radius: var(--border-radius);
+  padding: 0.6em 1.2em;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fff;
+  background-color: var(--color-accent);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+button:hover {
+  background-color: var(--color-accent-hover);
+  transform: scale(1.03);
+}
+
+/* =========================================================
+   Task Box
+   ========================================================= */
+.task-item {
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+  background-color: var(--color-box);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-soft);
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.task-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+.task-item h2 {
+  margin: 0.3rem 0;
+}
+
+/* =========================================================
+   Task Action Buttons
+   ========================================================= */
+.task-actions {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+/* =========================================================
+   Responsive Design
+   ========================================================= */
+@media (max-width: 600px) {
+  form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+  }
+
+  .task-item {
+    width: 90%;
+  }
+}
