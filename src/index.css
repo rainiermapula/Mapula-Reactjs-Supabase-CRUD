@@ -1,3 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* -----------------------------------------
+   Custom Boyish Style Add-Ons
+----------------------------------------- */
+
+@layer base {
+  /* Rugged / sporty fonts */
+  body {
+    @apply font-sans bg-[#0f1217] text-gray-100;
+    font-family: 'Inter', 'Roboto Condensed', sans-serif;
+  }
+
+  h1, h2, h3 {
+    @apply tracking-wide font-bold;
+  }
+}
+
+@layer components {
+  /* Boyish button: bold, sharp, energetic */
+  .btn-boy {
+    @apply bg-blue-600 hover:bg-blue-700 text-white font-bold px-4 py-2 rounded-md shadow-md transition-all;
+  }
+
+  /* Street-style card */
+  .card-boy {
+    @apply bg-[#1a1f26] border border-gray-700 rounded-xl p-6 shadow-lg;
+  }
+
+  /* Tag badge / gamer-style */
+  .tag-boy {
+    @apply bg-yellow-500 text-black px-2 py-1 rounded-sm font-semibold uppercase text-xs tracking-wider;
+  }
+}
+
+@layer utilities {
+  /* Rough, punchy highlights */
+  .text-boy-pop {
+    @apply text-blue-400 drop-shadow-[0_0_6px_rgba(59,130,246,0.6)];
+  }
+
+  /* Slight grunge texture */
+  .bg-boy-grit {
+    background: repeating-linear-gradient(
+      45deg,
+      #121418,
+      #121418 3px,
+      #15181c 3px,
+      #15181c 6px
+    );
+  }
+
+  /* Sporty underline accent */
+  .underline-boy {
+    text-decoration: underline;
+    text-decoration-color: #3b82f6;
+    text-decoration-thickness: 3px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* =========================================================
    Root Variables
    ========================================================= */
