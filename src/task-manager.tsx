@@ -191,7 +191,7 @@ import "./App.css";
 
   return (
     <div className="App-Container" style={{maxWidth: '600px', margin: '0 auto', padding: '1rem '}}>
-      <h2 className="text-3xl font-bold underline">Supabase Project</h2>
+      <h2 className="text-3xl font-bold underline">Mapula Supabase Project</h2>
 
 
 {/* ----------------------------------From to add new task--------------------------------------------------- */}
