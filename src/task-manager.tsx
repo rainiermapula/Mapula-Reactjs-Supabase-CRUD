@@ -12,8 +12,11 @@ import "./App.css";
     video_url?: string | null;
   }
 
-
   export default function App() {
+    const tableName = import.meta.env.VITE_TABLE_NAME
+    const storageName = import.meta.env.VITE_STORAGE_NAME
+
+
     const [tasks, setTasks] = useState<Task[]>([]);
     const [newTask, setNewTask] = useState({ title: "", description: "" });
     const [newDescription, setNewDescription] = useState("");
@@ -26,7 +29,7 @@ import "./App.css";
 // --- READ TASKS ---
   const fetchTasks = async () => {
     const { data, error } = await supabase
-      .from("tasks")
+      .from(tableName)
       .select("*")
       .order("id", { ascending: false });
 
@@ -52,7 +55,7 @@ import "./App.css";
 // --- UPDATE TASK ---
   const updateTask = async (id: number) => {
     const { error } = await supabase
-      .from("tasks")
+      .from(tableName)
       .update({ description: newDescription })
       .eq("id", id);
 
@@ -87,7 +90,7 @@ import "./App.css";
 
 // Upload the file to Supabase Storage
   const { error: uploadError } = await supabase.storage
-    .from("notes-images") // bucket name
+    .from(storageName) // bucket name
     .upload(filePath, file, { upsert: true });
 
 
@@ -99,7 +102,7 @@ import "./App.css";
 
 // Get the public URL after upload
   const { data } = supabase.storage
-    .from("notes-images")
+    .from(storageName)
     .getPublicUrl(filePath);
 
 
@@ -191,7 +194,7 @@ import "./App.css";
 
   return (
     <div className="App-Container" style={{maxWidth: '600px', margin: '0 auto', padding: '1rem '}}>
-      <h2 className="text-3xl font-bold underline">Mapula Supabase Project</h2>
+      <h2 className="text-3xl font-bold underline">Mapula Supabase X Project</h2>
 
 
 {/* ----------------------------------From to add new task--------------------------------------------------- */}
